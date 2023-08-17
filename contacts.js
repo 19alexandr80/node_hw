@@ -22,10 +22,8 @@ async function removeContact(contactId) {
     return null;
   }
   const [result] = contacts.splice(contactDeleteInd, 1);
-  // console.log(contactDeleteInd);
   fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
   return result;
-  // ...твій код. Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
 }
 
 async function addContact({ name, email, phone }) {
